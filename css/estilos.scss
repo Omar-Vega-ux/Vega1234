@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Saira', sans-serif;
+}
+
+@import "variables";
+
+html{
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background-color: $color2;
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: $color7;
+    border-radius: 3rem;
+}
+
+body{
+    background-image: url(../images/photo-1550895030-823330fc2551.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    height: 78vh;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.fas:hover{
+    color: $color3;
+}
+
+.actGymEnlaces{
+    a{
+        text-decoration: none;
+        color: $color7;
+    }
+    a:hover{
+        color: $color1;
+    }
+}
+
+/*----Menú de Navegación Big Screens----*/
+
+header{
+    background-image: url(../images/fondo-headerrrr2.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100%;
+    width: 100%;
+}
+
+#logo__superior{
+    background-position-y: 100%;
+    background-position-x: center;
+    background-image: url(../images/logo-life-sombreado.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#logo__superior img{
+    width: $size3*40;
+}
+
+#menu__nav{
+    position: relative;
+    top: -6rem;
+    width: 100%;
+}
+
+.container__menu{
+    background-color: $color1;
+    height: 5rem;
+    width: 100%;
+    padding-top: 1.75rem;
+    text-align: center;
+    box-shadow: 0px 5px 5px rgba(29, 29, 29, 0.377), 0px -5px 5px rgba(32, 32, 32, 0.329);
+}
+
+.nav__inline li a {
+    background-color: $color1;
+    color: $color3;
+    padding: 1.25rem 0.50rem;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    font-size: $size1*2;
+}
+
+.nav__inline--li{
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.nav__inline li a:hover {
+    background-color: $color3;
+    color: black;
+    height: auto;
+}
+
+.btnGym{
+    color: $color3;
+    padding: 0.3rem;
+    background-color: $color7;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    background-position-x: center;
+    text-decoration: none;
+}
+
+.btnGym:hover{
+    background-color: $color6;
+    color: $color3;
+}
+
+/*----Menú de Navegación Small Screens----*/
+#menu__nav--responsive{
+    margin: auto;
+    width: 100%;
+}
+
+#ulNavResponsive{
+    margin-left: 5%;
+}
+
+.nav__responsive{
+    padding-left: 0;
+}
+
+.nav__responsive li a{
+    background-color: $color1;
+    color: $color3;
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    padding: 0.5rem;
+}
+
+.nav__responsive li a:hover{
+    background-color: $color3;
+    color: $color5;
+    background-position: center;
+}
+
+.nav__responsive li ul{
+    display: none;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 90%; /*esto es el tamaño de la caja de los elementos del submenu */
+
+}
+
+.nav__responsive li:hover>ul {
+    display: block;
+    z-index: 100;
+}
+
+.container__menu--res{
+    background-color: $color1;
+    height: 3rem;
+    width: 100%;
+    padding-top: 0.75rem;
+    background-position-x: center;
+    text-align: center;
+    box-shadow: 0px 5px 5px rgb(9, 255, 64), 0px -5px 5px rgb(30, 255, 0);
+}
+/*--------------------------*/
+
+/*----------TRAINING GENERADOR--------*/
+.form__contact{
+    color: $color3;
+    font-weight: bold;
+    background-color: $color2;
+    border-radius: 5px;
+    margin-top: 0%; 
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    box-shadow: 0px 5px 5px rgba(29, 29, 29, 0.377), 0px -5px 5px rgba(32, 32, 32, 0.329);
+}
+
+.contact__h5{
+    font-weight: bold;
+}
+
+
+fieldset{
+    border: 2px solid $color2;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Ventanas modal rutina*/
+
+.modalContainerRutinas{
+    height: 100vh;
+    width: 100vw;
+    background-color: $color6;
+    background-size: contain;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.modalRutinasActive{
+    visibility: visible;
+    opacity: 1;
+    z-index: 100;
+}
+
+.modalRutinas{
+    color: $color5;
+    background-color: $color3;
+    width: 95%;
+    height: 95%;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    overflow-y: scroll;
+}
+
+.modalRutinas::-webkit-scrollbar{
+    width: 0.5rem;
+
+    background-color: $color2;
+    border-radius: 3rem;
+}
+
+.modalRutinas::-webkit-scrollbar-thumb{
+    background-color: $color7;
+    border-radius: 3rem;
+}
+
+.modalForm{
+    color: $color5;
+    background-color: $color3;
+    background-size: contain;
+    width: 50%;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+}
+
+/*-------------------INDEX---------------*/
+
+.container__actividad{
+    margin-top: -5rem;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor{
+    position: relative;
+    margin: 2%;
+}
+
+.img__index--act{
+    border-radius: 100%;
+    filter: grayscale(1);
+}
+
+.filtro__hov{
+        position: absolute;
+        top: 5;
+        left: 0;
+        width: 97%;
+        height: 97%;
+        border-radius: 100%;
+        background: $color1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        
+        p{
+            transform: translateY(2.5rem);
+            font-size: $size3*2;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.815);
+        }
+    }
+
+    .filtro__hov:hover {
+        opacity: 1; 
+
+        p{
+            transform: translateY(0rem);
+            color: $color3;
+        }                 
+}
+
+@media screen and (min-width: 360px){
+
+    .container__actividad{
+        padding: 0%;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .img__index--act{
+        height: 15rem;
+        width: 15rem;
+    }
+
+    #menu__nav{
+        display: none;
+    }
+
+    #logo__superior{
+        padding: 15%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    #ulNavResponsive{
+        margin-left: 7%;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .container__actividad{
+    margin-top: -5rem;
+    }
+
+    #logo__superior{
+        text-align: center;
+        padding: 20%;
+    }
+
+    #menu__nav{
+        display: inline;
+    }
+
+    #menu__nav--responsive{
+        display: none;
+    }
+
+    .mainSpace{
+        margin-top: -5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .nav__inline li a {
+        padding: 1.25rem 1.25rem;
+    }
+    
+    .img__index--act{
+        height: 13rem;
+        width: 13rem;
+    }
+}
+
+@import "contacto";
+@import "nosotros";
+@import "footer";
